@@ -1,0 +1,14 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: reverseproxy
+  region: us-east-1
+
+nodeGroups:
+  - name: reverseproxy
+    labels: { role: reverseproxy }
+    instanceType: t3.micro
+    desiredCapacity: 2
+    privateNetworking: true
+  
